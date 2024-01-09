@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  default_url_options :host => "localhost:3000"
+
   devise_for :users, controllers: {
     confirmations: 'users/confirmations',
     passwords: 'users/passwords',

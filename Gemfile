@@ -72,3 +72,9 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+# Run against this stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 6.1.0'
+  gem 'factory_bot_rails'
+end
