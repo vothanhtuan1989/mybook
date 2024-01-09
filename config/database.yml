@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: mybook_development
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: Password123
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: mybook_test
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: Password123
+
+production:
+  adapter: <%= ENV.fetch("DATABASE_ADAPTER") %>
+  encoding: <%= ENV.fetch("DATABASE_ENCODING") %>
+  database: <%= ENV.fetch("DATABASE_NAME") %>
+  username: <%= ENV.fetch("DATABASE_USERNAME") %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
+  host: <%= ENV.fetch("DATABASE_HOST") %>
+  port: <%= ENV.fetch("DATABASE_PORT") %>
+  pool: <%= ENV.fetch("DATABASE_POOL") %>
