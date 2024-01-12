@@ -12,7 +12,7 @@ class Group < ApplicationRecord
   enum status: [:active, :archive]
 
   has_rich_text :description
-  has_one_attached :avatar
+  # has_one_attached :avatar
 
   def creator?(user_id)
     role?(user_id, 'creator')

@@ -5,5 +5,5 @@ class Book < ApplicationRecord
   has_many :book_groups, dependent: :destroy
 
   has_rich_text :description
-  has_one_attached :cover
+  # has_one_attached :cover
 end

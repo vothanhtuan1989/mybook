@@ -265,7 +265,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   factory_bot_rails
-  image_processing (~> 1.2)
+  image_processing (>= 1.2)
   importmap-rails
   jbuilder
   pg (~> 1.1)
