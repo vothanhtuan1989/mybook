@@ -8,11 +8,11 @@ local:
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
-  service: S3
-  access_key_id: AKIAI26SLCWJHZT5HEDQ
-  secret_access_key: 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
-  region: us-east-1
-  bucket: giaiphapnhadat-store
+  service: <%= ENV.fetch("AMAZON_SERVICE") %>
+  access_key_id: <%= ENV.fetch("AMAZON_ACCESS_KEY_ID") %>
+  secret_access_key: <%= ENV.fetch("AMAZON_SECRET_ACCESS_KEY") %>
+  region: <%= ENV.fetch("AMAZON_REGION") %>
+  bucket: <%= ENV.fetch("AMAZON_BUCKET") %>
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
