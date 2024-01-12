@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe "reading_times/index", type: :view do
   before(:each) do
     assign(:reading_times, [
