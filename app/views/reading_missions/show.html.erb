@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @reading_mission %>
+
+<div>
+  <%= link_to "Edit this reading mission", edit_reading_mission_path(@reading_mission) %> |
+  <%= link_to "Back to reading missions", reading_missions_path %>
+
+  <%= button_to "Destroy this reading mission", @reading_mission, method: :delete %>
+</div>

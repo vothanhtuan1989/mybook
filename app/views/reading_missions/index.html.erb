@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Reading missions</h1>
+
+<div id="reading_missions">
+  <% @reading_missions.each do |reading_mission| %>
+    <%= render reading_mission %>
+    <p>
+      <%= link_to "Show this reading mission", reading_mission %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New reading mission", new_reading_mission_path %>

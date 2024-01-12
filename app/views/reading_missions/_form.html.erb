@@ -1,0 +1,62 @@
+<%= form_with(model: reading_mission) do |form| %>
+  <% if reading_mission.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(reading_mission.errors.count, "error") %> prohibited this reading_mission from being saved:</h2>
+
+      <ul>
+        <% reading_mission.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :exact_page, style: "display: block" %>
+    <%= form.number_field :exact_page %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :from_page, style: "display: block" %>
+    <%= form.number_field :from_page %>
+  </div>
+
+  <div>
+    <%= form.label :to_page, style: "display: block" %>
+    <%= form.number_field :to_page %>
+  </div>
+
+  <div>
+    <%= form.label :book_id, style: "display: block" %>
+    <%= form.number_field :book_id %>
+  </div>
+
+  <div>
+    <%= form.label :priority, style: "display: block" %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div>
+    <%= form.label :active, style: "display: block" %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class BookPlan < ApplicationRecord
+end

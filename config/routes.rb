@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :user_groups
+  resources :reading_missions
+  resources :plans
+  resources :profiles
+  resources :reading_times
+  resources :groups
+  resources :books
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get 'home/index'
