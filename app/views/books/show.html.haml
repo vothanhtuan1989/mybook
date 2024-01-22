@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Cover:
+  = @book.cover
+%p
+  %strong Name:
+  = @book.name
+%p
+  %strong Description:
+  = @book.description
+%p
+  %strong Author:
+  = @book.author
+%p
+  %strong Price:
+  = @book.price
+%p
+  %strong Buy at:
+  = @book.buy_at
+%p
+  %strong Number of page:
+  = @book.number_of_page
+= link_to 'Edit', edit_book_path(@book)
+|
+= link_to 'Back', books_path

@@ -1,4 +1,4 @@
-class ReadingMissionsController < ApplicationController
+class ReadingMissionsController < AdminController
   before_action :set_reading_mission, only: %i[ show edit update destroy ]
 
   # GET /reading_missions or /reading_missions.json

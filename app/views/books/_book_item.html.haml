@@ -1,0 +1,32 @@
+.book-item
+  = link_to book_path(book) do
+    - if book.cover.present?
+      = image_tag url_for(book.cover), width: "100%"
+    - else
+      = book.name
+
+-# .card
+-#   .card-header
+-#     - if book.cover.present?
+-#       = image_tag url_for(book.cover), width: "100%"
+-#   .card-body
+-#     %h3.card-title= book.name
+-#     %p
+-#       Author:
+-#       %strong= book.author
+-#     %p
+-#       Price:
+-#       %strong= book.price
+-#     %p
+-#       Buy at:
+-#       %strong= book.buy_at
+-#     %p
+-#       Number of page:
+-#       %strong= book.number_of_page
+-#   .card-footer.text-right
+-#     = link_to 'Show', book
+-#     \|
+-#     = link_to 'Edit', edit_book_path(book)
+-#     \|
+-#     = button_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }
+-# %br

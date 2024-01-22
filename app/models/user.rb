@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   before_destroy :check_root_user?
 
+  has_many :books, dependent: :destroy
+
   def check_root_user?
     throw :abort if root_user?
   end

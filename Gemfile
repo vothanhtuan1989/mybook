@@ -80,3 +80,6 @@ group :development, :test do
 end
 
 gem "aws-sdk-s3", require: false
+
+gem "haml-rails", "~> 2.0"
+gem 'sass-rails', '~> 6.0'

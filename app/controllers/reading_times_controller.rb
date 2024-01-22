@@ -1,4 +1,4 @@
-class ReadingTimesController < ApplicationController
+class ReadingTimesController < AdminController
   before_action :set_reading_time, only: %i[ show edit update destroy ]
 
   # GET /reading_times or /reading_times.json

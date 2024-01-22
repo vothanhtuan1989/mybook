@@ -4,6 +4,8 @@ class Book < ApplicationRecord
   has_one :profile, foreign_key: 'current_book_id'
   has_many :book_groups, dependent: :destroy
 
+  belongs_to :user
+
   has_rich_text :description
-  # has_one_attached :cover
+  has_one_attached :cover
 end

@@ -1,0 +1,17 @@
+.row
+  .col-md-6.col-sm-12.col-xs-12
+    %h3 My Books
+  .col-md-6.col-sm-12.col-xs-12.text-right
+    = link_to new_book_path, class: 'btn btn-success btn-new' do
+      %i.fa.fa-plus
+      %span New Book
+%hr
+.row
+  - if @books.count.zero?
+    .col-md-12
+      %p
+        %strong No books
+  - else
+    - @books.each do |book|
+      .col-md-2.col-sm-4.col-xs-12
+        = render 'book_item', book: book

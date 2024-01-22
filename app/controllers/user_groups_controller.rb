@@ -1,4 +1,4 @@
-class UserGroupsController < ApplicationController
+class UserGroupsController < AdminController
   before_action :set_user_group, only: %i[ show edit update destroy ]
 
   # GET /user_groups or /user_groups.json

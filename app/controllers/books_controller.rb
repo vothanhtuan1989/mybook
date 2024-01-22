@@ -1,9 +1,9 @@
-class BooksController < ApplicationController
+class BooksController < AdminController
   before_action :set_book, only: %i[ show edit update destroy ]
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+    @books = current_user.books
   end
 
   # GET /books/1 or /books/1.json
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
 
   # POST /books or /books.json
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
 
     respond_to do |format|
       if @book.save
@@ -60,7 +60,7 @@ class BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params[:id])
+      @book = current_user.books.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
