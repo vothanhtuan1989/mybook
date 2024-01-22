@@ -1,0 +1,12 @@
+.row
+  .col-md-2
+    = render 'tab_header', group: @group, current_tab: 'books'
+  .col-md-10
+    .card
+      .card-body
+        %h3 Books
+        %hr
+        .row
+          - @books.each do |book|
+            .col-md-3.col-sm-6.col-xs-12
+              = render 'books/book_item', book: book

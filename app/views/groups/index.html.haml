@@ -1,0 +1,33 @@
+.row
+  .col-md-6.col-sm-12.col-xs-12
+    %h3 My Groups
+  .col-md-6.col-sm-12.col-xs-12.text-right
+    = link_to new_group_path, class: 'btn btn-success btn-new' do
+      %i.fa.fa-plus
+      %span New Group
+%hr
+.row
+  - if @groups.count.zero?
+    .col-md-12
+      %p
+        %strong No groups
+  - else
+    - @groups.each do |group|
+      .col-md-3.col-sm-6.col-xs-12
+        = render 'groups/group_item', group: group, owner: true
+
+%br
+%br
+.row
+  .col-md-12.col-sm-12.col-xs-12
+    %h3 Join Groups
+%hr
+.row
+  - if @join_groups.count.zero?
+    .col-md-12
+      %p
+        %strong No groups
+  - else
+    - @join_groups.each do |group|
+      .col-md-3.col-sm-6.col-xs-12
+        = render 'group_item', group: group, owner: true

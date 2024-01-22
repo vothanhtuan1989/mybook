@@ -1,0 +1,35 @@
+.card
+  .card-header
+    .row
+      .col-md-12
+        .group-item-header(style="display: flex; align-items: center;")
+          - if group.avatar.present?
+            = image_tag url_for(group.avatar), width: '100%'
+          - else
+            .default-img
+              %i.fa.fa-users
+          %h3= group.name
+  .card-body
+    .row
+      .col-md-12
+        .group-item
+          Members:
+          %strong= group.user_groups_count
+        .group-item
+          Number of books:
+          %strong= group.book_groups_count
+        .group-item
+          Categories:
+          %strong
+        .group-item
+          Start date:
+          %strong= group.start_date
+  .card-footer
+    .row
+      .col-md-12
+        %p.text-right
+          - if owner
+            = link_to 'Details', group_path(group), class: 'btn btn-primary'
+          - else
+            = link_to 'Join', '#', class: 'btn btn-success'
+%br

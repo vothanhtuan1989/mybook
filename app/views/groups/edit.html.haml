@@ -1,0 +1,9 @@
+.row
+  .col-md-2
+    = render 'tab_header', group: @group, current_tab: 'settings'
+  .col-md-10
+    .card
+      .card-body
+        %h3 Editing group
+
+        = render 'form'

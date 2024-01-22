@@ -4,8 +4,20 @@ Rails.application.routes.draw do
   resources :plans
   resources :profiles
   resources :reading_times
-  resources :groups
-  resources :books
+  resources :groups do
+    member do
+      get :books
+      get :members
+      get :invitation_requests
+      get :join_requests
+    end
+  end
+  resources :books do
+    member do
+      post :generate_mission
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get 'home/index'

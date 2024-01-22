@@ -1,0 +1,23 @@
+.row
+  .col-md-2
+    = render 'tab_header', group: @group, current_tab: 'invitation_requests'
+  .col-md-10
+    .card
+      .card-body
+        %h3 Invitation requests
+        %hr
+        .row
+          - @invitation_requests.each do |invitation|
+            .col-md-3
+              .card
+                .card-body
+                  %p.default-avatar
+                    %i.fa.fa-user-circle-o
+                  %h5.card-title.text-center= invitation.user.full_name
+                  %p.text-center
+                    = link_to "#", class: 'btn btn-success btn-sm' do
+                      Approve
+                    \ 
+                    \|
+                    = link_to "#", class: 'btn btn-danger btn-sm' do
+                      Reject

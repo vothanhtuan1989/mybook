@@ -1,0 +1,24 @@
+.row
+  .col-md-2
+    = render 'tab_header', group: @group, current_tab: 'members'
+  .col-md-10
+    .card
+      .card-body
+        %h3 Members
+        %hr
+        .row
+          - @users.each do |user|
+            - role = user.user.user_groups.where(group_id: @group.id).first.role
+            .col-md-3
+              .card
+                .card-body
+                  %p.default-avatar
+                    %i.fa.fa-user-circle-o
+                  %h5.card-title.text-center= user.user.full_name
+                  %p.text-center
+                    Role: 
+                    = role
+                  %p.text-center
+                    - if role != 0
+                      = link_to "#", class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' } do
+                        Remove

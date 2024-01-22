@@ -1,0 +1,16 @@
+- current_tab ||= 'books'
+
+.btn-group-vertical(style="width: 100%")
+  = link_to 'Books', books_group_path(group), class: "btn #{active_tab(current_tab, 'books')}"
+  -# - if policy(group).members?
+  = link_to 'Members', members_group_path(group), class: "btn #{active_tab(current_tab, 'members')}"
+  -# - if policy(group).invitation_requests?
+  = link_to invitation_requests_group_path(group), class: "btn #{active_tab(current_tab, 'invitation_requests')}" do
+    Invitation requests
+    %span.badge.badge-danger 4
+  -# - if policy(group).join_requests?
+  = link_to join_requests_group_path(group), class: "btn #{active_tab(current_tab, 'join_requests')}" do
+    Join requests
+    %span.badge.badge-danger 4
+  -# - if policy(group).edit?
+  = link_to 'Settings', edit_group_path(group), class: "btn #{active_tab(current_tab, 'settings')}"
